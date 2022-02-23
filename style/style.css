@@ -287,6 +287,11 @@ body {
     height: 100%;
     overflow: hidden;
     box-shadow: 0 0 15px #ccc;
+    transform: translateX(-100%);
+    transition: all 0.3s ease-in-out;
+  }
+  .header .menu.active {
+    transform: translateX(0);
   }
   .header .item-center .menu > ul > li {
     display: block;
@@ -317,6 +322,9 @@ body {
     display: flex;
     height: 50px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    position: sticky;
+    background: #fff;
+    z-index: 501;
   }
   .mobile-menu-head .go-back {
     height: 50px;
@@ -324,7 +332,11 @@ body {
     cursor: pointer;
     line-height: 50px;
     text-align: center;
+    display: none;
     border-right: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  .mobile-menu-head.active .go-back {
+    display: block;
   }
   .mobile-menu-head .current-menu-title {
     font-weight: 500;
@@ -338,17 +350,54 @@ body {
     text-align: center;
     cursor: pointer;
   }
+  .mobile-menu-head.active .mobile-menu-close {
+    display: block;
+  }
+
   .header .menu .main-menu {
     height: 100%;
     overflow-x: hidden;
     overflow-y: auto;
   }
+  .header .item-center .menu ul li .sub-menu.mega-menu,
   .header .item-center .menu ul li .sub-menu {
-    position: relative;
+    position: absolute;
     opacity: 1;
     visibility: visible;
     box-shadow: none;
     margin: 0;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    padding: 15px;
+    left: 0;
+    padding-top: 60px;
+    transform: translateX(0%);
+    display: none;
+    overflow-y: auto;
+  }
+  @keyframes slideLeft {
+    0% {
+      opacity: 0;
+      transform: translateX(100%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  @keyframes slideRight {
+    0% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    100% {
+      opacity: 0;
+      transform: translateX(100%);
+    }
+  }
+  .header .item-center .menu ul li .sub-menu.active {
+    display: block;
   }
   .header .item-center .menu ul li .sub-menu.mega-menu-column-4 > .list-item {
     flex: 0 0 100%;
