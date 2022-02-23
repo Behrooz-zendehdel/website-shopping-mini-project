@@ -232,6 +232,7 @@ body {
   background-position: center;
   display: block;
 }
+.mobile-menu-head,
 .mobile-nav-trigger {
   display: none;
 }
@@ -276,5 +277,100 @@ body {
   }
   .mobile-nav-trigger span::after {
     transform: translateY(6px);
+  }
+  .header .menu {
+    position: fixed;
+    left: 0;
+    top: 0;
+    background: #fff;
+    width: 350px;
+    height: 100%;
+    overflow: hidden;
+    box-shadow: 0 0 15px #ccc;
+  }
+  .header .item-center .menu > ul > li {
+    display: block;
+    line-height: 1;
+    margin: 0;
+  }
+  .header .item-center .menu > ul > li > a {
+    padding: 0 15px;
+    line-height: 50px;
+    height: 50px;
+    display: block;
+    position: relative;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  .header .item-center .menu > ul > li > a svg {
+    position: absolute;
+    height: 50px;
+    width: 12px;
+    left: 10px;
+    top: 0;
+    transform: rotate(90deg);
+    line-height: 50px;
+    font-size: 20px;
+  }
+  .mobile-menu-head {
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+    height: 50px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  .mobile-menu-head .go-back {
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+    line-height: 50px;
+    text-align: center;
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  .mobile-menu-head .current-menu-title {
+    font-weight: 500;
+    font-size: 15px;
+  }
+  .mobile-menu-head .mobile-menu-close {
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+    text-align: center;
+    cursor: pointer;
+  }
+  .header .menu .main-menu {
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+  .header .item-center .menu ul li .sub-menu {
+    position: relative;
+    opacity: 1;
+    visibility: visible;
+    box-shadow: none;
+    margin: 0;
+  }
+  .header .item-center .menu ul li .sub-menu.mega-menu-column-4 > .list-item {
+    flex: 0 0 100%;
+    padding: 0;
+  }
+  .header .item-center .menu ul li .single-column-menu {
+    min-width: none;
+    max-width: none;
+  }
+  .header
+    .item-center
+    .menu
+    ul
+    li
+    .sub-menu.mega-menu-column-4
+    > .list-item
+    > ul
+    > li
+    > a {
+    display: block;
+  }
+  .header .item-center .menu ul li .sub-menu.mega-menu > .list-item > ul {
+    margin-bottom: 15px;
   }
 }
